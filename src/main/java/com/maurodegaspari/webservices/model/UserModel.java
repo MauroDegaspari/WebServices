@@ -1,4 +1,4 @@
-package com.maurodegaspari.webservices.modal;
+package com.maurodegaspari.webservices.model;
 
 import java.io.Serializable;
 

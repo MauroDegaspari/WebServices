@@ -7,7 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import com.maurodegaspari.webservices.modal.UserModel;
+import com.maurodegaspari.webservices.model.UserModel;
 import com.maurodegaspari.webservices.repositories.UserRepositorio;
 
 @Configuration
