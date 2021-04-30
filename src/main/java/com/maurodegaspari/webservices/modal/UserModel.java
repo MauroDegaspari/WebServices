@@ -1,4 +1,4 @@
-package com.maurodegaspari.webservices.entidade;
+package com.maurodegaspari.webservices.modal;
 
 import java.io.Serializable;
 
@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class UserEntidade implements Serializable {
+public class UserModel implements Serializable {
 	
 	/**
 	 * Numero de serie do User
@@ -23,11 +23,11 @@ public class UserEntidade implements Serializable {
 	private String phone;
 	private String senha;
 	
-	public UserEntidade() {
+	public UserModel() {
 		
 	}
 
-	public UserEntidade(Long id, String nome, String email, String phone, String senha) {
+	public UserModel(Long id, String nome, String email, String phone, String senha) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -92,7 +92,7 @@ public class UserEntidade implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		UserEntidade other = (UserEntidade) obj;
+		UserModel other = (UserModel) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
