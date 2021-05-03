@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class UserModel implements Serializable {
 	
@@ -27,6 +29,7 @@ public class UserModel implements Serializable {
 	private String senha;
 	
 		//associação
+	@JsonIgnore
 	@OneToMany(mappedBy ="cliente")
 	private List<OrderModel> Ordes = new ArrayList<>();
 	
