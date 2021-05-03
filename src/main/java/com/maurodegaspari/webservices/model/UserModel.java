@@ -1,11 +1,14 @@
-package com.maurodegaspari.webservices.modal;
+package com.maurodegaspari.webservices.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class UserModel implements Serializable {
@@ -23,10 +26,16 @@ public class UserModel implements Serializable {
 	private String phone;
 	private String senha;
 	
+		//associação
+	@OneToMany(mappedBy ="cliente")
+	private List<OrderModel> Ordes = new ArrayList<>();
+	
+		//Construtor
 	public UserModel() {
 		
 	}
-
+	
+		//Construtor com argumentos
 	public UserModel(Long id, String nome, String email, String phone, String senha) {
 		super();
 		this.id = id;
@@ -36,6 +45,7 @@ public class UserModel implements Serializable {
 		this.senha = senha;
 	}
 
+		//gets e setts
 	public Long getId() {
 		return id;
 	}
@@ -75,6 +85,10 @@ public class UserModel implements Serializable {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	
+	public List<OrderModel> getOrdes() {
+		return Ordes;
+	}
 
 	@Override
 	public int hashCode() {
@@ -101,7 +115,5 @@ public class UserModel implements Serializable {
 		return true;
 	}
 
-	
-	
-	
+		
 }

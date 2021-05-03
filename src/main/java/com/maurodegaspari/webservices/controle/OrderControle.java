@@ -9,25 +9,26 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.maurodegaspari.webservices.model.UserModel;
-import com.maurodegaspari.webservices.service.UserService;
+import com.maurodegaspari.webservices.model.OrderModel;
+import com.maurodegaspari.webservices.model.OrderModel;
+import com.maurodegaspari.webservices.service.OrderService;
 
 @RestController
-@RequestMapping(value = "/users")
-public class UserControle{
+@RequestMapping(value = "/order")
+public class OrderControle{
 
 	@Autowired
-	private UserService userService;
+	private OrderService orderService;
 	
 	@GetMapping
-	private ResponseEntity<List<UserModel>> todos() {
-		List<UserModel> list = userService.acharTodos();
+	private ResponseEntity<List<OrderModel>> todos() {
+		List<OrderModel> list = orderService.acharTodos();
 		return ResponseEntity.ok().body(list);
 		}
 	
 	@GetMapping(value= "/{id}")
-	public ResponseEntity<UserModel> achId(@PathVariable Long id) {
-		UserModel pessoaId = userService.acharId(id);
+	public ResponseEntity<OrderModel> achId(@PathVariable Long id) {
+		OrderModel pessoaId = orderService.acharId(id);
 		return ResponseEntity.ok().body(pessoaId);
 	}
 	
